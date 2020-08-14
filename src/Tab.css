@@ -1,0 +1,23 @@
+.tabItem {
+  display: inline-block;
+  padding: 8px;
+  background-color: #ccc;
+  /* box-shadow: 0 0 2px #000; */
+  border-left: 1px solid #b6b6b6;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+.tabItem:last-of-type {
+  border-right: 1px solid #b6b6b6;
+}
+.activeItem {
+  background-color: #fff;
+  color: #000;
+  border-bottom-color: transparent;
+}
+.tabContainer {
+  overflow: hidden;
+  border: 1px solid #000;
+  padding-bottom: 100px;
+}
