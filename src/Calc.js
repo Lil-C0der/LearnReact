@@ -23,7 +23,6 @@ class TemperatureIpt extends Component {
       <fieldset>
         <legend>Enter temperature in {scaleName}:</legend>
         <input onChange={this.onChange.bind(this)} value={temperature}></input>
-        <BoilingVerdict celsius={temperature} />
       </fieldset>
     )
   }
@@ -67,6 +66,7 @@ class Calc extends Component {
       <div>
         <TemperatureIpt temperature={celsius} onTemperatureChange={this.onCelsiusChange.bind(this)} scale="c" />
         <TemperatureIpt temperature={fahrenheit} onTemperatureChange={this.onFahrenheitChange.bind(this)} scale="f" />
+        <BoilingVerdict celsius={celsius} />
       </div>
     )
   }

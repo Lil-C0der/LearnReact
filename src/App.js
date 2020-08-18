@@ -9,6 +9,7 @@ import Form from './Form'
 import Tab from './Tab'
 import Calc from './Calc'
 import FancyBorder from './FancyBorder'
+import Table from './Table'
 
 class App extends React.Component {
   constructor() {
@@ -16,7 +17,15 @@ class App extends React.Component {
     this.state = {
       numbers: [1, 2, 3, 4, 5],
       date: [822, 823, 824, 825],
-      activeIdx: 822
+      activeIdx: 822,
+      PRODUCTS: [
+        { category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football' },
+        { category: 'Sporting Goods', price: '$9.99', stocked: true, name: 'Baseball' },
+        { category: 'Sporting Goods', price: '$29.99', stocked: false, name: 'Basketball' },
+        { category: 'Electronics', price: '$99.99', stocked: true, name: 'iPod Touch' },
+        { category: 'Electronics', price: '$399.99', stocked: false, name: 'iPhone 5' },
+        { category: 'Electronics', price: '$199.99', stocked: true, name: 'Nexus 7' }
+      ]
     }
     // this.onTabItemClick = this.onTabItemClick.bind(this)
   }
@@ -25,7 +34,7 @@ class App extends React.Component {
     console.log('app', idx)
   }
   render() {
-    const { numbers, date, activeIdx } = this.state
+    const { numbers, date, activeIdx, PRODUCTS } = this.state
     const element = (
       <div className="App">
         <Clock />
@@ -42,6 +51,7 @@ class App extends React.Component {
           <h1 className="Dialog-title">Welcome</h1>
           <p className="Dialog-message">Thank you for visiting our spacecraft!</p>
         </FancyBorder>
+        <Table products={PRODUCTS} />
       </div>
     )
 
