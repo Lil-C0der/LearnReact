@@ -11,6 +11,8 @@ import Calc from './Calc'
 import FancyBorder from './FancyBorder'
 import Table from './Table'
 
+import Todo from './Todo/index'
+
 class App extends React.Component {
   constructor() {
     super()
@@ -33,14 +35,14 @@ class App extends React.Component {
     this.setState({ activeIdx: idx })
     console.log('app', idx)
   }
+
   render() {
     const { numbers, date, activeIdx, PRODUCTS } = this.state
+
     const element = (
       <div className="App">
         <Clock />
-        <Clock />
-        <Clock />
-        <Counter count={5} />
+        {/* <Counter count={5} /> */}
         <Counter count={3} />
         <LoginControl />
         <List numbers={numbers} />
@@ -52,6 +54,7 @@ class App extends React.Component {
           <p className="Dialog-message">Thank you for visiting our spacecraft!</p>
         </FancyBorder>
         <Table products={PRODUCTS} />
+        <Todo />
       </div>
     )
 
